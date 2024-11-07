@@ -1,4 +1,4 @@
-# Test_JavaCode
+# Test_JavaCode [![Test](https://github.com/lirprocs/test_JavaCode/actions/workflows/test.yaml/badge.svg)](https://github.com/lirprocs/test_JavaCode/actions/workflows/test.yaml)
 ## Реализованы следующие эндпоинты:
 1. POST /api/v1/wallet -  изменениe счета в базе данных.
 2. GET  /api/v1/wallets/{walletID} - проверка баланса.
