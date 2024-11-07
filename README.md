@@ -38,7 +38,7 @@ cd test_JavaCode
 docker-compose -f docker-compose.test.yml --env-file ./config_test.env up --build
 ```
 Проверка работы методов UpdateBalance и GetBalance в условиях реального подключения к базе данных и работы в конкурентной среде. \
-После вывода результатов тестов остановите выполнение (CTR + C)
+После вывода результатов тестов остановите выполнение (CTR + C). 
 3. Для запуска юнит-тестов:
 ```bash
 go test -tags !docker ./...
