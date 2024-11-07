@@ -19,17 +19,10 @@ config.env
 ```bash
 config_test.env
 ```
-3. Внесите в них данные как в примере .env.example:
-```bash
-POSTGRES_USER=example
-POSTGRES_PASSWORD=qwert
-POSTGRES_DB=example
-DB_HOST=db
-DB_PORT=5432
-APP_PORT=8080
-```
+3. Внесите в них данные как в примере [.env.example](./.env.example).
+
 ## Запуск тестов
-1. Перейдите в директорию проекта (Не нужно, еслу уже находитесь в ней):
+1. Перейдите в директорию проекта (Не нужно, если уже находитесь в ней):
 ```bash
 cd test_JavaCode
 ```
@@ -50,7 +43,7 @@ docker-compose down --rmi all --volumes --remove-orphans
 ```
 
 ## Запуск приложения
-1. Перейдите в директорию проекта (Не нужно, еслу уже находитесь в ней):
+1. Перейдите в директорию проекта (Не нужно, если уже находитесь в ней):
 ```bash
 cd test_JavaCode
 ```
