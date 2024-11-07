@@ -39,6 +39,7 @@ docker-compose -f docker-compose.test.yml --env-file ./config_test.env up --buil
 ```
 Проверка работы методов UpdateBalance и GetBalance в условиях реального подключения к базе данных и работы в конкурентной среде. \
 После вывода результатов тестов остановите выполнение (CTR + C). <br>
+
 3. Для запуска юнит-тестов:
 ```bash
 go test -tags !docker ./...
