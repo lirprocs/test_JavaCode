@@ -1,7 +1,25 @@
 # Test_JavaCode [![Test](https://github.com/lirprocs/test_JavaCode/actions/workflows/test.yaml/badge.svg)](https://github.com/lirprocs/test_JavaCode/actions/workflows/test.yaml)
+***MyWalletApp*** — это REST API приложение для управления балансом кошельков, разработанное на Golang. Приложение поддерживает операции пополнения и снятия средств, а также проверку текущего баланса. Проект спроектирован для работы в Docker и включает конфигурации для тестирования в конкурентной среде.
 ## Реализованы следующие эндпоинты:
-1. POST /api/v1/wallet -  изменениe счета в базе данных.
-2. GET  /api/v1/wallets/{walletID} - проверка баланса.
+1. POST `/api/v1/wallet` -  Выполнение операции пополнения (`DEPOSIT`) или снятия (`WITHDRAW`) средств.
+
+**Пример запроса в Postman:**
+```bash
+{
+    "walletId": "{{$guid}}",
+    "operationType": "DEPOSIT",
+    "amount": 123 
+}
+````
+2. GET  `/api/v1/wallets/{walletID}` - Получение текущего баланса для указанного кошелька.
+
+**Пример ответа:**
+```bash
+{
+    "balance": 1000
+}
+
+````
 ## Установка
 1. Клонируйте репозиторий:
 ```bash
@@ -26,18 +44,18 @@ config_test.env
 ```bash
 cd test_JavaCode
 ```
-2. Для запуска тестов базы данных:
+2. Для выполнения тестов в Docker-среде используйте файл `docker-compose.test.yml`. Выполните команду:
 ```bash
 docker-compose -f docker-compose.test.yml --env-file ./config_test.env up --build
 ```
 Проверка работы методов UpdateBalance и GetBalance в условиях реального подключения к базе данных и работы в конкурентной среде. \
-После вывода результатов тестов остановите выполнение (CTR + C). <br>
+После вывода результатов тестов остановите выполнение (`CTR + C`). <br>
 
 3. Для запуска юнит-тестов:
 ```bash
 go test -tags !docker ./...
 ```
-4. После тестов в дерриктории проекта выполните:
+4. После тестов в директории проекта выполните:
 ```bash
 docker-compose down --rmi all --volumes --remove-orphans
 ```
@@ -51,5 +69,7 @@ cd test_JavaCode
 ```bash
 docker-compose --env-file ./config.env  up --build
 ```
+
+Приложение будет доступно по адресу http://localhost:8080.
 
 
