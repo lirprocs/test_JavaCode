@@ -6,3 +6,5 @@ config_test.env
 *.dll
 *.so
 *.dylib
+
+.idea/
